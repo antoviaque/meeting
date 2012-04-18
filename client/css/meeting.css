@@ -1,0 +1,19 @@
+
+
+.login-menu {
+    width: 250px;
+}
+
+.login-form {
+    margin: 0 10px -12px 10px;
+}
+
+.login-form input[type=text],
+.login-form input[type=password] {
+    width: 180px;
+    margin: 2px 0;
+}
+
+.login-form button {
+    float: right;
+}
