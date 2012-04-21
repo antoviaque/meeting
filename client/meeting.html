@@ -81,36 +81,36 @@
                 <div class="control-group">
                     <label class="control-label">Meeting duration</label>
                     <div class="controls">
-                        <input type="text" class="input-mini" value="1"> hour(s)
-                        <input type="text" class="input-mini" value="0"> minute(s)
+                        <input type="text" class="input-mini duration-hours" value="1"> hour(s)
+                        <input type="text" class="input-mini duration-minutes" value="0"> minute(s)
                     </div>
                 </div>
 
-                <div class="control-group">
+                <div class="control-group availability">
                     <label class="control-label">Your availabilities</label>
                     <div class="controls">
                         <input type="text" class="input-small dateinput" value="16/02/2012" data-date-format="dd/mm/yyyy">
-                        <input type="text" class="input-mini" value="9:00">
+                        <input type="text" class="input-mini time-begin" value="9:00">
                         to
-                        <input type="text" class="input-mini" value="18:00">
+                        <input type="text" class="input-mini time-end" value="18:00">
                     </div>
                 </div>
                 
-                <div class="control-group">
+                <div class="control-group availability">
                     <div class="controls">
                         <input type="text" class="input-small dateinput" value="16/02/2012" data-date-format="dd/mm/yyyy">
-                        <input type="text" class="input-mini" value="9:00">
+                        <input type="text" class="input-mini time-begin" value="9:00">
                         to
-                        <input type="text" class="input-mini" value="18:00">
+                        <input type="text" class="input-mini time-end" value="18:00">
                     </div>
                 </div>
                 
-                <div class="control-group">
+                <div class="control-group availability">
                     <div class="controls">
                         <input type="text" class="input-small dateinput" value="16/02/2012" data-date-format="dd/mm/yyyy">
-                        <input type="text" class="input-mini" value="9:00">
+                        <input type="text" class="input-mini time-begin" value="9:00">
                         to
-                        <input type="text" class="input-mini" value="18:00">
+                        <input type="text" class="input-mini time-end" value="18:00">
                         <button type="submit" class="btn btn-primary">
                             <i class="icon-plus icon-white"></i>
                         </button>
@@ -120,14 +120,14 @@
                 <div class="control-group">
                     <label class="control-label">Meeting topic &amp; location</label>
                     <div class="controls">
-                        <input type="text" class="input-xlarge">
+                        <input type="text" class="input-xlarge topic">
                     </div>
                 </div>
 
                 <div class="control-group">
                     <label class="control-label">Emails of participants</label>
                     <div class="controls">
-                        <textarea id="textarea" class="input-xlarge" rows="3"></textarea>
+                        <textarea id="textarea" class="input-xlarge participants-emails" rows="3"></textarea>
                     </div>
                 </div>
 
@@ -145,19 +145,19 @@
                 <div class="control-group">
                     <label class="control-label">Your name</label>
                     <div class="controls">
-                        <input type="text" class="input-xlarge">
+                        <input type="text" class="input-xlarge organizer-name">
                     </div>
                 </div>
                         
                 <div class="control-group">
-                    <label class="control-label" for="input_email">Your email</label>
+                    <label class="control-label">Your email</label>
                     <div class="controls">
-                        <input type="text" class="input-xlarge">
+                        <input type="text" class="input-xlarge organizer-email">
                     </div>
                 </div>
                         
                 <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">Start scheduling!</button>
+                    <button type="submit" class="btn btn-primary new-meeting">Start scheduling!</button>
                     <button class="btn">Reset</button>
                 </div>
             </fieldset>
@@ -169,10 +169,12 @@
     <div class="my-meetings">
         <ul class="nav nav-list">
             <li class="nav-header">
-                My Meetings
+                Meetings
             </li>
-            <li class="active"><a href="#">Meeting 1</a></li>
-            <li><a href="#">Meeting 2</a></li>
+            <!--<li class="active"><a href="#">Meeting 1</a></li>-->
+            {{#each meetings}}
+                <li><a href="#">{{topic}}</a></li>
+            {{/each}}
             <li class="divider"></li>
             <li><a href="#">Preferences</a></li>
         </ul>
